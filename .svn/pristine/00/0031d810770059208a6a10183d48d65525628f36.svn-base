@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户个人信息</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/userViewInformation.css">
+</head>
+<body>
+<div id="head">
+
+    <p id="K">K</p>
+    <p id="TWO">2</p>
+
+    <i class="fa fa-youtube-play fa-5x"></i>
+
+    <div id="navbtn" class="btn-group">
+        <button  class="btn btn-default" onclick="jump_home()">用户首页</button>
+        <button  class="btn btn-default" onclick="jump_userShareRoom()">共享空间</button>
+        <button  class="btn btn-default" onclick="jump_changePW()">修改密码</button>
+    </div>
+
+    <p id="exitBtn" onclick="jump_login()">
+        <button type="button" class="btn btn-default ">
+            <span class="glyphicon glyphicon-log-out"></span> 退出
+        </button>
+    </p>
+
+</div>
+<p id="userViewInfor-words">————个人信息</p>
+<p id="user-level">用户级别：<span id="userLevel">1</span></p>
+<p id="used-storage">已用存储空间：<span id="usedStorage">2</span></p>
+<p id="user-storage">可用存储空间：<span id="storage">3</span></p>
+<p id="user-log-word">用户视频日志：</p>
+<div class="user-log">
+    <table  class="table table-striped"><!--获取地址-->
+        <thead>
+        <tr>
+            <th>视频文件名</th>
+            <th>类型</th>
+            <th>时间</th>
+        </tr>
+        </thead>
+
+        <tbody id="logList">
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/userViewInformation.js"></script>
+</body>
+</html>

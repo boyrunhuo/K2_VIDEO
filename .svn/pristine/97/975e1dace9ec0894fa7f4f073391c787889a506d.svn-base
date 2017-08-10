@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户共享空间</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/userShareRoom.css">
+</head>
+<body>
+<div id="head">
+
+    <p id="K">K</p>
+    <p id="TWO">2</p>
+    <i class="fa fa-youtube-play fa-5x"></i>
+
+
+    <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+            <li ><a href="javascript:void(0)" onclick="jump_home()">我的视频</a></li>
+            <li><a href="javascript:void(0)" onclick="jump_userViewInformation()">个人信息</a></li>
+            <li><a href="javascript:void(0)" onclick="jump_userChangePW()">修改密码</a></li>
+            <li class="active"><a href="javascript:void(0)" onclick="jump_userShareRoom()" >共享空间</a></li>
+        </ul>
+    </nav>
+    <span href="" id="userName">用户名</span>
+
+    <p id="exitBtn" onclick="jump_login()">
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-log-out"></span> 退出
+        </button>
+    </p>
+</div>
+
+
+<div id="menu">
+    <span id="shareRoom-words">共享空间</span>
+    <button class="btn btn-primary"> <a href="#"  style="text-decoration: none;color: black" id="downloadVideo">下载</a> </button>
+    <a id="excute-download" href="#" style="display:none"><span id="excute">实际执行按钮</span></a>
+    <div class="input-group">
+        <input type="text" class="form-control input-sm" placeholder="请输入关键字搜索" id="searchContent">
+        <button class="input-group-addon  btn-primary" id="searchVideoBtn">搜索</button>
+    </div>
+</div>
+
+<div id="main">
+    <table  class="table table-striped"><!--获取地址-->
+        <caption>视频列表</caption>
+        <tbody id="videolist">
+        </tbody>
+    </table>
+</div>
+
+<div class="videoInfor" hidden>
+    <span id="videoInforWord">视频元信息</span>
+    <table class="getVideoInfor">
+        <tr>
+            <th>视频大小</th>
+            <th id="videoSize"></th>
+            <th>共享文件名</th>
+            <th id="sharedFilename"></th>
+
+        </tr>
+        <tr>
+            <th>视频格式</th>
+            <th id="videoType"></th>
+            <th>MD5码</th>
+            <th id="video_md5"></th>
+        </tr>
+        <tr>
+            <th>视频时长</th>
+            <th id="videoTimeLength"></th>
+            <th>共享状态</th>
+            <th id="shareVideoState"></th>
+        </tr>
+        <tr>
+            <th>视频分辨率</th>
+            <th id="videoResolution"></th>
+            <th>视频标签</th>
+            <th id="videoLabel"></th>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary" id="videoInforConfirmBtn">确 认</button>
+</div>
+
+<script type="text/javascript" src="/javascripts/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="../public/javascripts/upload.js"></script>-->
+<script type="text/javascript" src="/javascripts/userShareRoom.js"></script>
+<!--<script type="text/javascript" src="/javascripts/userPlayVideo.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/md5/dist/browser-md5-file.js"></script>
+<script type="text/javascript" src="/javascripts/md5/dist/browser-md5-file.min.js"></script>-->
+</body>
+</html>

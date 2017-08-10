@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validation</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/validation.css">
+</head>
+<body>
+
+<div id="main">
+    <div>
+
+    </div>
+
+    <p>你好!</p>
+    <p id="userMail"><%= username %></p>
+    <p>欢迎使用K2视频存储管理系统</p>
+    <p style="color: #5bc0de">你的激活状态：</p>
+    <p id="activeState"><%= message %></p>
+
+    <button id="login" class="btn btn-default btn-sm" onclick="openLogin()"> 激活成功，去登录</button>
+    <button id="register" class="btn btn-default btn-sm" onclick="openRegister()">激活失败，重新去注册</button>
+</div>
+<script>
+    function openLogin() {
+        window.location.href = "/login";
+    }
+
+    function openRegister() {
+        window.location.href="/register";
+
+    }
+</script>
+</body>
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/validation.js"></script>
+</html>

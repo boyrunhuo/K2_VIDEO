@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    overflow: scroll;
+    background: #070719 none repeat scroll 0 0;
+
+}
+#main {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+p {
+    font-size: x-large;
+    color: white;
+}
+
+#register {
+    position: absolute;
+    left: 200px;
+    top:200px;
+}
+
+#login {
+    position: absolute;
+
+    top:200px;
+}
+
+#activeState {
+ position: absolute;
+    left: 150px;
+    top:120px;
+    color: #86ff6f;
+
+}
+
+#userMail{
+    color: #5cb85c;
+    position: absolute;
+    left: 65px;
+    top: 0px;
+
+}

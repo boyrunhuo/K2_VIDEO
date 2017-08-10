@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户修改密码</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/userChangePW.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="head">
+
+        <p id="K">K</p>
+        <p id="TWO">2</p>
+        <i class="fa fa-youtube-play fa-5x"></i>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li ><a href="javascript:void(0)" onclick="jump_home()">我的视频</a></li>
+                <li><a href="javascript:void(0)" onclick="jump_userViewInformation()">个人信息</a></li>
+                <li class="active"><a href="javascript:void(0)" onclick="jump_userChangePW()">修改密码</a></li>
+                <li><a href="javascript:void(0)" onclick="jump_userShareRoom()">共享空间</a></li>
+            </ul>
+        </nav>
+        <span href="" id="userName">用户名</span>
+
+        <p id="exitBtn" onclick="jump_login()">
+            <button type="button" class="btn btn-default ">
+                <span class="glyphicon glyphicon-log-out"></span> 退出
+            </button>
+        </p>
+
+    </div>
+
+    <p id="changePW-words">————修改密码</p>
+    <div class="userChangePwForm">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="userOriginalPw" class="col-sm-2 control-label">原密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="userOriginalPw"
+                           placeholder="请输入原密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userNewPw" class="col-sm-2 control-label">新密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="userNewPw"
+                           placeholder="请输入新密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userConfirmNewPw" class="col-sm-2 control-label">重复新密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="userConfirmNewPw"
+                           placeholder="请重复输入新密码">
+                </div>
+            </div>
+
+        </form>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" id="submitChangePwBtn">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/userChangePW.js"></script>
+</body>
+</html>

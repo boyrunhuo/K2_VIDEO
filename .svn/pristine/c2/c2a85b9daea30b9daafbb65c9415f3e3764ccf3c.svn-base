@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+<body>
+<div id="header">
+
+    <button type="button" class="btn btn-primary" id="changePW">修改密码</button>
+    <button type="button" class="btn btn-primary" id="exit">退出</button>
+
+</div>
+
+
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active">
+        <a href="#userManger" data-toggle="tab">
+            用户管理
+        </a>
+    </li>
+    <li><a href="#fileManger" data-toggle="tab">文件管理</a></li>
+
+</ul>
+
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="userManger">
+        <button class="btn btn-primary" id="forbidden">禁用</button>
+        <button class="btn btn-primary" id="cancelForbidden">取消禁用</button>
+        <button class="btn btn-primary" id="delete">删除</button>
+        <div class="form-group" id="selectLV">
+            <label for="name"> 用户级别设置</label>
+            <select name="" id="level" class="form-control">
+                <option value=""></option>
+                <option value="H">高</option>
+                <option value="M">中</option>
+                <option value="L">低</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" id="check-storageBtn">存储空间查看</button>
+        <button class="btn btn-primary" id="set-storageBtn">存储空间设置</button>
+        <div id="set-storage">
+            <p>选择等级后进行更改</p>
+            <select name="" id="select-set-level" class="form-control">
+                <option value=""></option>
+                <option value="H">高</option>
+                <option value="M">中</option>
+                <option value="L">低</option>
+            </select>
+            <form >
+            <input type="text" id="set-level"  >G
+            </form>
+            <button id="change-storage" class="btn defult-btn">确认更改</button>
+
+        </div>
+        <div id="check-storage">
+
+        </div>
+
+
+        <div id="myTable">
+
+            <table class="table  ">
+                <tbody id="userList">
+                <caption>用户列表</caption>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>用户名</th>
+                    <th>用户级别</th>
+                    <th>已用空间(单位/MB)</th>
+                    <th>上传文件数</th>
+                    <th>用户状态</th>
+
+                </tr>
+                </thead>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="fileManger">
+        <button class="btn btn-primary" id="totalInfbtn">统计信息</button>
+        <button class="btn btn-primary" id="logbtn">查看日志</button>
+
+        <!--   <div class="input-group">
+               <input type="text" class="form-control input-sm" placeholder="请输入关键字搜索"><span
+                   class="input-group-addon btn btn-primary">搜索</span>
+           </div>-->
+
+        <div id="myFileTable">
+            <table class="table  ">
+                <tbody id="fileList">
+                <caption>文件列表</caption>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>视频名</th>
+                    <th>分辨率</th>
+                    <th>大小</th>
+                    <th>时长</th>
+                    <th>格式</th>
+
+
+                </tr>
+                </thead>
+
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+        <div id="totalInf" style="display: none">
+            <i class="fa fa-window-close  fa-2x" id="infclose" aria-hidden="true"></i>
+            <table class="table">
+                <tbody id="totalInfTable">
+                <tr>
+                    <td>文件数量</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>已用空间</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>剩余空间</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div id="Log" style="display: none">
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" placeholder="请输入关键字搜索" id="search-content">
+                <span
+                        class="input-group-addon btn btn-primary" id="search-button">搜索</span>
+            </div>
+
+            <i class="fa fa-window-close  fa-2x" id="logclose" aria-hidden="true"></i>
+
+            <table class="table">
+                <tbody id="logTable">
+                <caption>视频日志</caption>
+                <thead>
+                <th>用户</th>
+                <th>文件名</th>
+                <th>上传/下载</th>
+                <th>时间</th>
+                </thead>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div id="label" style="display: none">
+            <i class="fa fa-window-close  fa-2x" id="labclose" aria-hidden="true"></i>
+            <p id="labP"></p>
+        </div>
+
+      <!--  ----------------------------------------------视频归属信息------------------------------------------------------- -->
+        <div id="videoB" style="display: none">
+            <i class="fa fa-window-close  fa-2x" id="videoBClose" aria-hidden="true"></i>
+            <table class="table">
+                <tbody id="videoBe">
+                <caption>视频归属信息</caption>
+                <thead>
+                <tr>
+                    <th>上传者</th>
+                    <th>视频名</th>
+                    <th>共享状态</th>
+                </tr>
+                </thead>
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+</div>
+<div id="wait">
+    <img src="/images/cat.gif" id="loading" style="width: 200px;height: 150px;" alt="">
+</div>
+
+</body>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/admin.js"></script>
+<script src="/javascripts/adminFiles.js"></script>
+</html>

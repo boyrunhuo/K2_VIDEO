@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>用户首页</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+
+<div id="head">
+
+    <p id="K">K</p>
+    <p id="TWO">2</p>
+    <i class="fa fa-youtube-play fa-5x"></i>
+
+    <nav class="navbar navbar-default" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="javascript:void(0)" onclick="jump_home()">我的视频</a></li>
+                    <li><a href="javascript:void(0)" onclick="jump_userViewInformation()">个人信息</a></li>
+                    <li><a href="javascript:void(0)" onclick="jump_userChangePW()">修改密码</a></li>
+                    <li><a href="javascript:void(0)" onclick="jump_userShareRoom()">共享空间</a></li>
+                </ul>
+    </nav>
+    <span href="" id="userName">用户名</span>
+
+    <p id="exitBtn" onclick="jump_login()">
+        <button type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-log-out"></span> 退出
+        </button>
+    </p>
+</div>
+
+
+<div id="menu">
+    <form action="/uploadVideo" method="post"  enctype="multipart/form-data" id="videoForm">
+        <input id="uploadbtn"   type="file" name="file" multiple  value="选择"
+               accept="video/ogg,video/mp4,video/WebM" style="opacity:0;width: 1px;position: relative; " />
+        <input type="submit" value=" 上传" style="display: none ">
+    </form>
+
+    <button id="excute-upload" class="btn btn-primary"  >上传</button>
+    <button  id="submitbtn" class="btn btn-primary" onclick="checkUpload()" style="display: none" >提交</button>
+     <button class="btn btn-primary"> <a href="#"  style="text-decoration: none;color: black" id="downloadVideo">下载</a> </button>
+    <button class="btn btn-primary" id="selectShareVideoBtn">共享</button>
+    <button class="btn btn-primary" id="selectDeleteVideoBtn">删除</button>
+    <button class="btn btn-primary" id="selectTagVideoBtn">标签</button>
+    <a id="excute-download" href="#" style="display:none"><span id="excute">实际执行按钮</span></a>
+
+    <div class="input-group">
+        <input type="text" class="form-control input-sm" placeholder="请输入关键字搜索" id="searchContent">
+        <label>
+            <select class="form-control" id="searchType">
+                <option value="selectFilename">文件名</option>
+                <option value="selectTag">标签</option>
+            </select>
+        </label>
+        <button class="input-group-addon  btn-primary" id="searchVideoBtn">搜索</button>
+    </div>
+</div>
+
+
+<div id="main">
+    <table  class="table table-striped"><!--获取地址-->
+        <caption>视频列表</caption>
+        <tbody id="videolist">
+        </tbody>
+    </table>
+
+</div>
+
+<div class="videoInfor" hidden>
+    <span id="videoInforWord">视频元信息</span>
+    <table class="getVideoInfor">
+        <tr>
+            <th>视频大小</th>
+            <th id="videoSize"></th>
+            <th>共享文件名</th>
+            <th id="sharedFilename"></th>
+        </tr>
+        <tr>
+            <th>视频格式</th>
+            <th id="videoType"></th>
+            <th>MD5码</th>
+            <th id="video_md5"></th>
+        </tr>
+        <tr>
+            <th>视频时长</th>
+            <th id="videoTimeLength"></th>
+            <th>共享状态</th>
+            <th id="shareVideoState"></th>
+        </tr>
+        <tr>
+            <th>视频分辨率</th>
+            <th id="videoResolution"></th>
+            <th>视频标签</th>
+            <th id="videoLabel"></th>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary" id="videoInforConfirmBtn">确 认</button>
+</div>
+
+<div class="user-renameVideo" hidden>
+    <span>该视频文件被重命名为：</span><br/>
+    <label><input type="text"  id="renameVideo"/></label><br/>
+    <button type="button" class="btn btn-primary btn-xs" id="renameConfirmBtn">确认</button>
+    <button type="button" class="btn btn-primary btn-xs" id="renameCancelBtn">取消</button>
+</div>
+
+<div class="user-deleteVideo" hidden>
+    <span>您要删除该视频吗？</span><br/>
+    <button type="button" class="btn btn-primary btn-xs" id="deleteConfirmBtn">确认</button>
+    <button type="button" class="btn btn-primary btn-xs" id="deleteCancelBtn">取消</button>
+</div>
+
+<div class="user-tagVideo"  hidden>
+    <span>为该视频添加标签：</span><br/>
+    <label><textarea rows="9" cols="50" placeholder="请输入视频的标签" id="tagContent"></textarea></label><br/>
+    <p >提示词：军事 政治 经济 搞笑 电影 喜剧 纪录片 电视剧 生活 学习 动漫 名人 其他 （输入的两个标签之间请用中文逗号隔开）</p>
+    <button type="button" class="btn btn-primary btn-xs" id="tagConfirmBtn">确认</button>
+    <button type="button" class="btn btn-primary btn-xs" id="tagCancelBtn">取消</button>
+</div>
+
+<div class="upload_inform" hidden>
+    <img src="/images/loading.gif"/>
+    <span >视频正在上传中......</span>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<!--<script type="text/javascript" src="../public/javascripts/upload.js"></script>-->
+<script type="text/javascript" src="/javascripts/home.js"></script>
+<script type="text/javascript" src="/javascripts/play.js"></script>
+<script type="text/javascript" src="/javascripts/userPlayVideo.js"></script>
+<script type="text/javascript" src="/javascripts/md5/dist/browser-md5-file.js"></script>
+<script type="text/javascript" src="/javascripts/md5/dist/browser-md5-file.min.js"></script>
+</body>
+</html>

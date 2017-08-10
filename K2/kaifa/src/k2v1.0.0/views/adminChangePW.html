@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员修改密码</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/userChangePW.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="head">
+
+        <p id="K">K</p>
+        <p id="TWO">2</p>
+
+        <i class="fa fa-youtube-play fa-5x"></i>
+
+        <div id="navbtn" class="btn-group" style="left:1100px">
+            <button  class="btn btn-default" onclick="window.location.href='/admin'">管理员首页</button>
+
+        </div>
+        <i class="fa fa-sign-out fa-2x" ></i>
+
+    </div>
+
+    <p id="changePW-words">——————管理员修改密码</p>
+    <div class="userChangePwForm">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="userOriginalPw" class="col-sm-2 control-label">原密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="adminOriginalPw"
+                           placeholder="请输入原密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userNewPw" class="col-sm-2 control-label">新密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="adminNewPw"
+                           placeholder="请输入新密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userConfirmNewPw" class="col-sm-2 control-label">重复新密码</label>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control" id="adminConfirmNewPw"
+                           placeholder="请重复输入新密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" id="submitChangePwBtn">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.form.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/adminChangePw.js"></script>
+</body>
+</html>

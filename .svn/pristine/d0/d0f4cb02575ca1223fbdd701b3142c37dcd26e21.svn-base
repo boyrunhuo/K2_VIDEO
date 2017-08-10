@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>播放页面</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/userPlayVideo.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="header-logo">
+            <p id="K">K</p>
+            <p id="TWO">2</p>
+            <i class="fa fa-youtube-play fa-5x"></i>
+        </div>
+
+        <nav class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li ><a href="javascript:void(0)" onclick="jump_home()">我的视频</a></li>
+                <li><a href="javascript:void(0)" onclick="jump_userViewInformation()">个人信息</a></li>
+                <li><a href="javascript:void(0)" onclick="jump_userChangePW()">修改密码</a></li>
+                <li><a href="javascript:void(0)" onclick="jump_userShareRoom()">共享空间</a></li>
+            </ul>
+        </nav>
+        <!--<div class="header_action">
+        <a id="userPage" href="/home">用户首页</a>
+        <button type="button" class="btn btn-default" onclick="jump_changePW()">修改密码</button>-->
+
+        <span id="onlinePlay-Word">在线播放</span>
+        <span id="userName"><%= username %></span>
+        <p id="exitBtn" onclick="jump_login()">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-log-out"></span> 退出
+            </button>
+        </p>
+    </div>
+    </div>
+    <div class="content">
+        <div class="content-action">
+        <span id="videoName" ><%= filename %></span>
+       <button type="button" class="btn btn-default " id="onlineDownloadVideo">下载</button>
+       <!-- <a id="onlineDownloadVideo" href="#">下载</a>-->
+        </div>
+        <a id="online-excute-download" href="#" style="display:none"><span id="online-excute">实际执行按钮</span></a>
+
+        <video class="onlineVideo" src="/playVideo" controls="controls">
+                无法播放视频。
+        </video>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/userPlayVideo.js"></script>
+</body>
+</html>
